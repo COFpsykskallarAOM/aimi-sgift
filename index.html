@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>for aimi</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; display:grid; place-items:center;
+    background:#09090d; color:#eee; font-family:monospace;
+    overflow:hidden;
+  }
+  .box{
+    width:min(560px,90vw); padding:34px 28px; text-align:center;
+    border:2px solid #eee; background:#101016;
+    box-shadow:8px 8px 0 #000;
+  }
+  .heart{font-size:28px;margin-bottom:12px}
+  h1{font-size:28px;margin:0 0 10px;letter-spacing:3px}
+  p{color:#aaa;line-height:1.6}
+  button{
+    margin-top:18px; padding:14px 28px; font:inherit;
+    color:#111; background:#eee; border:0; cursor:pointer;
+    font-weight:bold;
+  }
+  button:hover{transform:translateY(-2px)}
+  #msg{display:none;margin-top:22px;color:#eee}
+  audio{width:100%;margin-top:18px}
+  .small{font-size:12px;color:#666;margin-top:22px}
+</style>
+</head>
+<body>
+<main class="box">
+  <div class="heart">♡</div>
+  <h1>FOR AIMI</h1>
+  <p id="intro">you found something that was made for you.</p>
+  <button id="play">▶ PLAY</button>
+  <div id="msg">
+    <p>happy birthday!!<br>
+    i made this little song for you :]</p>
+    <audio id="song" controls preload="metadata">
+      <source src="HeavenSays(foraimi).mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="small">please don't close this page yet.</div>
+</main>
+<script>
+const b=document.getElementById("play");
+const m=document.getElementById("msg");
+const s=document.getElementById("song");
+b.onclick=()=>{
+  b.style.display="none";
+  m.style.display="block";
+  s.play().catch(()=>{});
+};
+</script>
+</body>
+</html>
